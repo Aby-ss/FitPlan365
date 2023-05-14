@@ -76,4 +76,15 @@ layout["Footer"].size = 3
 layout["Header"].update(Header())
 layout["Footer"].update(Footer())
 
+
+weight_target = Prompt.ask("What's your weight Target [Bulk or Cut]")
+
+if (weight_target == "Bulk"):
+    # Bulk panel update
+    ...
+elif (weight_target == "Cut"):
+    # Cut panel update
+    ...
+    
+    
 print(layout)
