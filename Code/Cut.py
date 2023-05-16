@@ -1,9 +1,3 @@
-from datetime import datetime
-import csv
-import time
-import numpy as np
-import asciichartpy
-
 from rich import print
 from rich import box
 from rich.text import Text
@@ -19,3 +13,8 @@ from rich.progress import Progress
 
 from rich.traceback import install
 install(show_locals=True)
+
+def Cut():
+    Cut_meals = Panel("", title = "Target : Cut", title_align = "left", border_style = "bold white", box = box.SQUARE)
+    
+    return Cut_meals
