@@ -71,10 +71,22 @@ class Footer:
             "💻", "[b]FitPlan[/]365", "🍞")
         return Panel(grid, style="green on black")
     
+    
+def Header_title():
+    return """  ______ _ _     _____  _               ____    __ _____ 
+ |  ____(_) |   |  __ \| |             |___ \  / /| ____|
+ | |__   _| |_  | |__) | | __ _ _ __     __) |/ /_| |__  
+ |  __| | | __| |  ___/| |/ _` | '_ \   |__ <| '_ \___ \ 
+ | |    | | |_  | |    | | (_| | | | |  ___) | (_) |__) |
+ |_|    |_|\__| |_|    |_|\__,_|_| |_| |____/ \___/____/ 
+ 
+A plan to bring out the beast inside every human and become\n              a better version of yourself"""
+
 layout["Header"].size = 3
 layout["Footer"].size = 3
 layout["Header"].update(Header())
 layout["Footer"].update(Footer())
+layout["right_Box1"].update(Header_title())
 
 
 weight_target = Prompt.ask("What's your weight Target [Bulk or Cut]")
