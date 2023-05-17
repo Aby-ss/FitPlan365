@@ -82,6 +82,12 @@ def Header_title():
  
         A plan to bring out the beast inside every human and become\n              a better version of yourself"""
 
+
+def workout_stats():
+    stats = Panel("", title = "Workout Stats", title_align = "left", border_style = "bold white", box = box.SQUARE)
+    
+    return stats
+
 layout["Header"].size = 3
 layout["Footer"].size = 3
 layout["Header"].update(Header())
