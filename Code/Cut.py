@@ -15,6 +15,6 @@ from rich.traceback import install
 install(show_locals=True)
 
 def Cut():
-    Cut_meals = Panel("", title = "Target : Cut", title_align = "left", border_style = "bold white", box = box.SQUARE)
+    Cut_meals = Panel("[b]Cutting Meals:\n\nSalmon with Steamed Vegetables: Salmon is rich in healthy fats and protein\nTurkey Lettuce Wraps: Low-carb alternative to normal wraps\nEgg White Omelette: Use egg whites instead of whole eggs to reduce calories and cholesterol\nVeggie Stir-Fry: Makes for a nutritious and low-calorie meal. Add some lean protein like tofu or shrimp for extra satiety.", title = "Target : Cut", title_align = "left", border_style = "bold white", box = box.SQUARE)
     
     return Cut_meals

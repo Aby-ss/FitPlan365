@@ -73,14 +73,14 @@ class Footer:
     
     
 def Header_title():
-    return """  ______ _ _     _____  _               ____    __ _____ 
- |  ____(_) |   |  __ \| |             |___ \  / /| ____|
- | |__   _| |_  | |__) | | __ _ _ __     __) |/ /_| |__  
- |  __| | | __| |  ___/| |/ _` | '_ \   |__ <| '_ \___ \ 
- | |    | | |_  | |    | | (_| | | | |  ___) | (_) |__) |
- |_|    |_|\__| |_|    |_|\__,_|_| |_| |____/ \___/____/ 
+    return """          ______ _ _     _____  _               ____    __ _____ 
+         |  ____(_) |   |  __ \| |             |___ \  / /| ____|
+         | |__   _| |_  | |__) | | __ _ _ __     __) |/ /_| |__  
+         |  __| | | __| |  ___/| |/ _` | '_ \   |__ <| '_ \___ \ 
+         | |    | | |_  | |    | | (_| | | | |  ___) | (_) |__) |
+         |_|    |_|\__| |_|    |_|\__,_|_| |_| |____/ \___/____/ 
  
-A plan to bring out the beast inside every human and become\n              a better version of yourself"""
+        A plan to bring out the beast inside every human and become\n              a better version of yourself"""
 
 layout["Header"].size = 3
 layout["Footer"].size = 3
@@ -93,10 +93,12 @@ weight_target = Prompt.ask("What's your weight Target [Bulk or Cut]")
 
 if (weight_target == "Bulk"):
     # Bulk panel update
-    ...
+    from Bulk import Bulk
+    layout["left_Box1"].update(Bulk())
 elif (weight_target == "Cut"):
     # Cut panel update
-    ...
+    from Cut import Cut
+    layout["left_Box1"].update(Cut())
     
     
 print(layout)
