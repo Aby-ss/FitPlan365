@@ -84,7 +84,14 @@ def Header_title():
 
 
 def workout_stats():
-    stats = Panel("", title = "Workout Stats", title_align = "left", border_style = "bold white", box = box.SQUARE)
+    stats = Panel("""  [b]_      __         __             __ 
+ | | /| / /__  ____/ /_____  __ __/ /_     [b red]Last Workout : Arms[/]
+ | |/ |/ / _ \/ __/  '_/ _ \/ // / __/     [b green]Duration : 2hrs 27 mins[/]
+ |__/|__/\___/_/ /_/\_\\___/\_,_/\__/[/]      [b green] Calories burnt : 2500 cal[/]
+                                           [b red]Workout Intensity : Hard[/]
+                                           [b green]Workout no. of week : 5th[/]
+                                           [b green]Exercises : 25[/]
+                                      """, title = "Workout Stats", title_align = "left", border_style = "bold white", box = box.SQUARE)
     
     return stats
 
@@ -93,6 +100,7 @@ layout["Footer"].size = 3
 layout["Header"].update(Header())
 layout["Footer"].update(Footer())
 layout["right_Box1"].update(Header_title())
+layout["LB2_1"].update(workout_stats())
 
 
 weight_target = Prompt.ask("What's your weight Target [Bulk or Cut]")
