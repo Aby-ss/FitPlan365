@@ -95,12 +95,25 @@ def workout_stats():
     
     return stats
 
+def Music_player():
+    music_panel = Panel("""  [b]  ______                         ___                  __        
+   /_  __/__  __ _________  ___   / _ \___ ____  ___   / /__      
+    / / / _ \/ // / __/ _ \/ -_) / // / _ `/ _ \(_-<  / / -_) _ _ 
+   /_/  \___/\_,_/_/ /_//_/\__/ /____/\_,_/_//_/___/ /_/\__/ (_|_)[/]
+                                                                                    
+                                                                                
+    <----------------*----------------------------------------------->
+    1:45                  Tourne Dans le Vide                     5:45""", title = "Music Player", title_align = "left", border_style = "bold white", box = box.SQUARE)
+    
+    return music_panel
+
 layout["Header"].size = 3
 layout["Footer"].size = 3
 layout["Header"].update(Header())
 layout["Footer"].update(Footer())
 layout["right_Box1"].update(Header_title())
 layout["LB2_1"].update(workout_stats())
+layout["LB2_2"].update(Music_player())
 
 
 weight_target = Prompt.ask("What's your weight Target [Bulk or Cut]")
