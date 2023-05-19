@@ -43,6 +43,11 @@ layout["Box2"].split_column(
     Layout(name = "right_Box2", size=27)
 )
 
+layout["right_Box2"].split_column(
+    Layout(name = "RB2_1"),
+    Layout(name = "RB2_2")
+)
+
 layout["left_Box2"].split_column(
     Layout(name = "LB2_1"),
     Layout(name = "LB2_2")
@@ -107,6 +112,12 @@ def Music_player():
     
     return music_panel
 
+
+def challenges():
+    challenge_panel = Panel("[b red]New Challenge ⚠[/]\nWorkout 3x a day for a week for a bonus subscription\n\nShowcase your dedication and commmitment by working above your limits and uncover the beauty of your body and get a bonus subscription plan as a reward where you won't have to pay for any further meal plans for the next 2 months. So what are you waiting for ? Get to work and get astonished by the results", title = "New Challenge 📩", title_align = "left", border_style = "bold white", box = box.SQUARE)
+    
+    return challenge_panel
+
 layout["Header"].size = 3
 layout["Footer"].size = 3
 layout["Header"].update(Header())
@@ -114,6 +125,7 @@ layout["Footer"].update(Footer())
 layout["right_Box1"].update(Header_title())
 layout["LB2_1"].update(workout_stats())
 layout["LB2_2"].update(Music_player())
+layout["RB2_1"].update(challenges())
 
 
 weight_target = Prompt.ask("What's your weight Target [Bulk or Cut]")
