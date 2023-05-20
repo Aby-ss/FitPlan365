@@ -118,6 +118,38 @@ def challenges():
     
     return challenge_panel
 
+def exercise_logger():
+    # Exercise log data
+    exercise_data = [
+        {"Exercise": "Push-ups", "Sets": 3, "Reps": 15, "Difficulty": "Intermediate"},
+        {"Exercise": "Squats", "Sets": 4, "Reps": 12, "Difficulty": "Beginner"},
+        {"Exercise": "Plank", "Sets": 2, "Duration": "1m 30s", "Difficulty": "Advanced"},
+        {"Exercise": "Lunges", "Sets": 3, "Reps": 10, "Difficulty": "Intermediate"},
+        {"Exercise": "Burpees", "Sets": 3, "Reps": 12, "Difficulty": "Advanced"},
+        {"Exercise": "Crunches", "Sets": 2, "Reps": 20, "Difficulty": "Beginner"},
+    ]
+
+    # Create a table for exercise log
+    table = Table(title="[white]Exercise Log[/white]")
+    table.add_column("Exercise", justify="center")
+    table.add_column("Sets", justify="center")
+    table.add_column("Reps/Duration", justify="center")
+    table.add_column("Difficulty", justify="center")
+
+    # Add rows to the table
+    for exercise in exercise_data:
+        table.add_row(
+            exercise["Exercise"],
+            str(exercise["Sets"]),
+            str(exercise.get("Reps", exercise.get("Duration"))),
+            exercise["Difficulty"],
+        )
+        
+    # Create exercise log panel
+    panel2 = Panel(table)
+    
+    return panel2
+
 layout["Header"].size = 3
 layout["Footer"].size = 3
 layout["Header"].update(Header())
@@ -126,6 +158,7 @@ layout["right_Box1"].update(Header_title())
 layout["LB2_1"].update(workout_stats())
 layout["LB2_2"].update(Music_player())
 layout["RB2_1"].update(challenges())
+layout["RB2_2"].update(exercise_logger())
 
 
 weight_target = Prompt.ask("What's your weight Target [Bulk or Cut]")
